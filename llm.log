@@ -208,3 +208,8 @@ Why the build failed
 Your HTML references the image as assets/image.jpg from index.html which is fine for direct copying, and that file exists: image.jpg.
 However, your SCSS used background-image: url("assets/image.jpg"); inside main.scss. When webpack processes SCSS, URLs are resolved relative to the SCSS file's location. From main.scss, assets/image.jpg points to src/css/assets/image.jpg (which doesn't exist), causing webpack to fail to resolve the asset during the build.
 Webpack's CopyPlugin does copy assets to the output, but loaders resolving URLs in CSS still need correct relative paths (or to be handled with import() / url() that webpack understands).
+
+add social media icons in the footer
+
+Add these snippets to your project — HTML for the footer (place near the end of src/index.html) and CSS to style the icons (append to src/css/main.scss).
+

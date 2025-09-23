@@ -67,9 +67,11 @@ function openModal() {
 
 function closeModal() {
     const modal = document.getElementById('modal');
+    //fade out effect
     if (modal) {
         modal.style.display = 'none';
     }
+    
 }
 window.left = left;
 window.right = right;
