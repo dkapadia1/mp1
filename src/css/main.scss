@@ -14,13 +14,13 @@ html, body {
 	box-sizing: inherit;
 }
 
-/* Sticky navbar */
 #navbar {
-	position: sticky; /* sticks relative to the viewport */
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 999;
+	width: 100%;
+	z-index: 9999;
 	background: rgba(255,255,255,0.95);
 	display: flex;
 	gap: 1rem;
@@ -78,6 +78,11 @@ div[id^="section"] img {
 /* Ensure the browser offsets scroll-to-fragment positioning by the navbar height */
 html {
 	scroll-padding-top: var(--navbar-height);
+}
+
+/* Push page content down so fixed navbar does not overlap it */
+body {
+	padding-top: var(--navbar-height);
 }
 
 /* For elements that can be targeted, add a scroll-margin-top so
