@@ -1,6 +1,7 @@
 /* Layout: make sections full viewport and navbar sticky */
 
 html, body {
+	scroll-behavior: smooth;
 	height: 100%;
 	width: 100%;
 	margin: 0;
@@ -55,9 +56,9 @@ div[id^="section"] img {
 }
 
 /* Example alternating background colors for clarity */
-#section1 { background: #f8fafc; }
-#section2 { background: #ffffff; }
-#section3 { background: #f3f4f6; }
+#section1 { background: #0000ff; }
+#section2 { background: #00ff5e; }
+#section3 { background: #0055ff; }
 
 /* Utility: when anchors target sections, offset for sticky navbar for in-page links */
 :target::before {
@@ -65,5 +66,31 @@ div[id^="section"] img {
 	display: block;
 	height: 68px; /* approximate navbar height */
 	margin-top: -68px;
+}
+
+/* Better anchor handling: declare navbar height as a CSS variable and use
+   scroll-padding-top (for fragment navigation) and scroll-margin-top
+   on section targets so headings are not covered by the sticky navbar. */
+:root {
+	--navbar-height: 68px; /* adjust if your navbar height changes */
+}
+
+/* Ensure the browser offsets scroll-to-fragment positioning by the navbar height */
+html {
+	scroll-padding-top: var(--navbar-height);
+}
+
+/* For elements that can be targeted, add a scroll-margin-top so
+   headings and other anchors are offset properly when jumping via links */
+div[id^="section"], section[id] {
+	scroll-margin-top: calc(var(--navbar-height));
+}
+
+/* Keep :target fallback but based on the CSS variable */
+:target::before {
+	content: "";
+	display: block;
+	height: var(--navbar-height);
+	margin-top: calc(-1 * var(--navbar-height));
 }
 
