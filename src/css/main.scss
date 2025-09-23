@@ -35,7 +35,12 @@ html, body {
 	text-decoration: none;
 	padding: 0.25rem 0.5rem;
 }
-
+#navbar a {
+    :hover {
+        background-color: #eee;
+        border-radius: 4px;
+    }
+}
 /* Make each section occupy full viewport height and full width */
 div[id^="section"] {
 	min-height: 100vh; /* full viewport height */
@@ -58,8 +63,26 @@ div[id^="section"] img {
 
 /* Example alternating background colors for clarity */
 #section1 { background: #0000ff; }
-#section2 { background-image: url("../assets/image.jpg"); }
+
+#section2 {
+	background-image: url("../assets/image.jpg");
+	background-attachment: fixed; 
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 #section3 { background: #0055ff; }
+
+/* Mobile / iOS fallback: background-attachment: fixed is not well supported on
+   many mobile browsers (esp. older iOS). For better behavior, switch to
+   scroll attachment on small viewports so layout doesn't jump. */
+@media (max-width: 768px) {
+	#section2 {
+		background-attachment: scroll;
+		background-position: top center;
+	}
+}
 
 /* Utility: when anchors target sections, offset for sticky navbar for in-page links */
 :target::before {
