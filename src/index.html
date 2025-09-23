@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous">
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,24 @@
             <a href="#section3">Section 3</a>
         </div>
         <div id="section1">
-            <h1>Section 1</h1>
-            <img src="assets/image.jpg" alt="Sample Image">
-            <p>This is section 1.</p>
+            <div id="Carousel">
+                <div class="track">
+                    <div class="item">
+                        <h1>Section 1</h1>
+                        <img src="assets/image.jpg" alt="Sample Image">
+                        <p>This is section 1.</p>
+                    </div>
+                    <div class="item">
+                        <h1>Section 1</h1>
+                        <h2>NO POLAR BEAR.</h2>
+                    </div>
+                    <div class="item">
+                        <h1>Fine you can have the polar bear</h1>
+                        <img src="assets/image.jpg" alt="Sample Image">
+                    </div>
+                </div>
+                <button onclick="left()" title="Left" id="Left"></button>
+                <button onclick="right()" title = "Right" id ="Right"></button>
         </div>
         <div id="section2">
             <h1>Section 2</h1>

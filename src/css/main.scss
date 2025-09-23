@@ -21,14 +21,16 @@ html, body {
 	right: 0;
 	width: 100%;
 	z-index: 9999;
-	background: rgba(255,255,255,0.95);
+	background: rgba(255,255,255);
 	display: flex;
 	gap: 1rem;
 	align-items: center;
 	padding: 1rem 1rem; 
 	border-bottom: 1px solid rgba(0,0,0,0.06);
 	transition: padding 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+    justify-content: end;
 }
+
 
 #navbar a {
 	color: #111;
@@ -71,7 +73,30 @@ div[id^="section"] img {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+#Carousel { overflow: hidden; }
+#Carousel .track { display: flex; transition: transform 400ms ease; will-change: transform; }
+#Carousel .item { min-width: 100%; flex: 0 0 100%; }
+#Carousel button {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.7);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+#Carousel button[id="Right"] {
+    left: 90vw;
+}
+#Carousel button::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900; /* solid style */
+  content: "\f053"; /* chevron-left */
+  font-size: 18px;
+  line-height: 1;
+  display: inline-block;
+}
+#Carousel button[id="Right"]::before { content: "\f054"; }
 #section3 { background: #0055ff; }
 
 /* Mobile / iOS fallback: background-attachment: fixed is not well supported on
@@ -115,7 +140,12 @@ body {
 	background: rgba(255,255,255,0.98);
 	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-
+#navbar.nav--expanded {
+	padding: 2rem 1rem; /* smaller padding when compact */
+	background: rgba(255,255,255,0.98);
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: large;
+}
 /* If you want the default to be compact and grow at the very top, invert the class logic
    or use `nav--expanded` instead. Here we use `nav--compact` when scrolled. */
 
