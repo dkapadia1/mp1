@@ -25,7 +25,7 @@ html, body {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
-	padding: 1rem 1rem; /* default expanded padding */
+	padding: 1rem 1rem; 
 	border-bottom: 1px solid rgba(0,0,0,0.06);
 	transition: padding 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
 }
