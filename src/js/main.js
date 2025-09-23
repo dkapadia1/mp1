@@ -57,5 +57,21 @@ function right() {
   if(window.i < 0) window.i = slides + window.i;
   window.i = (window.i + 1) % slides; track.style.transform = `translateX(-${window.i * 100}%)`;
 };
+
+function openModal() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
 window.left = left;
 window.right = right;
+window.openModal = openModal;
+window.closeModal = closeModal; 

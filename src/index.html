@@ -8,6 +8,13 @@
         <title>MP1</title>
     </head>
     <body>
+        <div id="modal">
+            <div id="modal-content">
+                <span id="close" onclick="closeModal()">&times;</span>
+                <img src="assets/image.jpg" alt="Sample Image">
+                <p>This is a modal popup!</p>
+            </div>
+        </div>
         <div id="navbar">
             <a id = "1" href="#section1">Section 1</a>
             <a id = "2" href="#section2">Section 2</a>
@@ -18,7 +25,7 @@
                 <div class="track">
                     <div class="item">
                         <h1>Section 1</h1>
-                        <img src="assets/image.jpg" alt="Sample Image">
+                        <img src="assets/image.jpg" alt="Sample Image" onclick="openModal()">
                         <p>This is section 1.</p>
                     </div>
                     <div class="item">
@@ -39,9 +46,18 @@
             <p>This is section 2.</p>
         </div>
         <div id="section3">
-            <h1>Section 3</h1>
-            <img src="assets/image.jpg" alt="Yet Another Sample Image">
-            <p>This is section 3.</p>
+            <div class="column1">   
+                <h2 >Section 3</h2>
+                <p> Not much to say</p>
+            </div>
+            <div class="column2">
+                <h2>No polar bear</h2>
+                <p> Lots of words going here</p>
+            </div>
+            <div class="column3">
+                <h2>Just scroll up</h2>
+                <p> That polar bear image is awesome</p>
+            </div>
         </div>
         <div id="footer">
             <p>© 2024 My Website</p>
