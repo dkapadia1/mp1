@@ -1,1 +1,69 @@
-/* Your SCSS here. */
+/* Layout: make sections full viewport and navbar sticky */
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+/* Sticky navbar */
+#navbar {
+	position: sticky; /* sticks relative to the viewport */
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background: rgba(255,255,255,0.95);
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+#navbar a {
+	color: #111;
+	text-decoration: none;
+	padding: 0.25rem 0.5rem;
+}
+
+/* Make each section occupy full viewport height and full width */
+div[id^="section"] {
+	min-height: 100vh; /* full viewport height */
+	width: 100vw;     /* full viewport width */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 1rem; /* small inner padding */
+	box-sizing: border-box;
+}
+
+/* Ensure images inside sections scale nicely */
+div[id^="section"] img {
+	max-width: 90%;
+	height: auto;
+	display: block;
+	margin: 1rem auto;
+}
+
+/* Example alternating background colors for clarity */
+#section1 { background: #f8fafc; }
+#section2 { background: #ffffff; }
+#section3 { background: #f3f4f6; }
+
+/* Utility: when anchors target sections, offset for sticky navbar for in-page links */
+:target::before {
+	content: "";
+	display: block;
+	height: 68px; /* approximate navbar height */
+	margin-top: -68px;
+}
+
