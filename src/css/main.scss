@@ -58,7 +58,7 @@ div[id^="section"] img {
 
 /* Example alternating background colors for clarity */
 #section1 { background: #0000ff; }
-#section2 { background-image: url("assets/image.jpg"); }
+#section2 { background-image: url("../assets/image.jpg"); }
 #section3 { background: #0055ff; }
 
 /* Utility: when anchors target sections, offset for sticky navbar for in-page links */
